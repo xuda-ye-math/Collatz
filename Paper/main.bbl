@@ -1,0 +1,38 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Scott(2006)]{scott2006elementary}
+Reese Scott.
+\newblock Elementary treatment of $p^a \pm p^b + 1 = x^2$.
+\newblock arXiv:math/0608796, 2006.
+\newblock Version 3, revised 2023.
+
+\bibitem[Sedaghat(2020{\natexlab{a}})]{sedaghat2020bounded}
+Hassan Sedaghat.
+\newblock Bounded orbits of quadratic {Collatz}-type recursions.
+\newblock arXiv:2004.07357, 2020{\natexlab{a}}.
+
+\bibitem[Sedaghat(2020{\natexlab{b}})]{sedaghat2020dual}
+Hassan Sedaghat.
+\newblock Dual nature of orbits of the divide-or-choose 2 rule: a quadratic
+  {Collatz}-type recursion.
+\newblock arXiv:2005.10712, 2020{\natexlab{b}}.
+
+\bibitem[Shoup(2008)]{shoup2008computational}
+Victor Shoup.
+\newblock \emph{A Computational Introduction to Number Theory and Algebra}.
+\newblock Cambridge University Press, second edition, 2008.
+\newblock \doi{10.1017/CBO9780511814549}.
+
+\bibitem[Szalay(2002)]{szalay2002equations}
+L{\'a}szl{\'o} Szalay.
+\newblock The equations $2^n \pm 2^m \pm 2^l = z^2$.
+\newblock \emph{Indagationes Mathematicae (N.S.)}, 13\penalty0 (1):\penalty0
+  131--142, 2002.
+\newblock \doi{10.1016/S0019-3577(02)90011-X}.
+
+\end{thebibliography}

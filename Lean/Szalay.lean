@@ -1,0 +1,9 @@
+import Szalay.Beukers
+import Szalay.SqrtCheck
+import Szalay.Lemma4
+import Szalay.Lemma5
+import Szalay.Lemma67
+import Szalay.Lemma8
+import Szalay.Approx
+import Szalay.Theorem1
+import Szalay.Theorem2
