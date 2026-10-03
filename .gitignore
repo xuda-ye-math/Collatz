@@ -1,3 +1,13 @@
 .*
 !.gitignore
 NNTDM/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.thm
+*.toc
+*.fls
+*.fdb_latexmk
