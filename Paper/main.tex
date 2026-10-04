@@ -37,6 +37,10 @@
 We study three quadratic Collatz-type maps on the non-negative integers. Each of them halves an even number, and they send an odd $n$ to $n(n-1)/2$, to $n(n+1)/2$ and to $(n^2 - 1)/4$, respectively.  Along an orbit, the odd terms grow until they reach a number of the form $2^m + 1$ or $2^m - 1$, depending on the map, and an orbit with an odd term greater than $1$ is bounded exactly when this happens. The step that reaches such a number gives a solution of an exponential Diophantine equation, which becomes the equation $2^a \pm 2^b + 1 = z^2$ after completing the square. With Szalay's classification of the solutions of this equation, we classify all orbits of the maps. Every orbit either is eventually periodic or tends to infinity, and we determine exactly the initial values with bounded orbits. For the map with odd branch $n(n-1)/2$, Sedaghat stated the classification, and we give a new and complete proof. For this map, we also give an elementary criterion for unbounded orbits, based on divisibility alone. To our knowledge, the classifications for the other two maps are new.
 \end{abstract}
 
+\textbf{Keywords:} Collatz-type map, quadratic map, bounded orbit, exponential Diophantine equation, multiplicative order.
+
+\textbf{2020 MSC:} 11B83, 11D61, 11A07.
+
 \section{Introduction}
 \label{sec: intro}
 
@@ -53,15 +57,54 @@ On the set $\mathbb N_0 = \{0, 1, 2, \dots\}$ of non-negative integers, consider
         \dfrac n2 , & n \text{ even} , \\[6pt]
         \dfrac{n(n+1)}{2} , & n \text{ odd} ,
     \end{cases}
-    \qquad
+    \label{eq: maps}
+\end{equation}
+whose odd branches are the binomial coefficients $\binom n2$ and $\binom{n+1}2$, and the symmetric map
+\begin{equation}
     S(n) =
     \begin{cases}
         \dfrac n2 , & n \text{ even} , \\[6pt]
         \dfrac{n^2 - 1}{4} , & n \text{ odd} .
     \end{cases}
-    \label{eq: maps}
+    \label{eq: map S}
 \end{equation}
 The orbit $(x_i)_{i \Ge 0}$ of an initial value $x_0 \in \mathbb N_0$ under $Q_-$ is defined by $x_{i+1} = Q_-(x_i)$, so that $x_i = Q_-^i(x_0)$, where $Q_-^i$ denotes the $i$-fold composition of $Q_-$. The orbits under $Q_+$ and $S$ and the compositions $Q_+^i$ and $S^i$ are defined in the same way. For $x_0 \Ge 1$, we write $x_0 = 2^l q$ with $l \Ge 0$ and $q$ odd, and call $q$ the odd part of $x_0$. In its compressed form, the Collatz map sends an even $n$ to $n/2$ and an odd $n$ to $(3n+1)/2$. As in the study of the Collatz map, we ask which initial values have bounded orbits, where these orbits end, and whether all other orbits tend to infinity.
+
+Our main results are the following theorems. They characterize all orbits of the Collatz-type maps $Q_-$, $Q_+$ and $S$ in \eqref{eq: maps} and \eqref{eq: map S}.
+\clearpage
+
+\begin{theorem}
+\label{thm: minus}
+    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $Q_-$.
+    \begin{enumerate}[(i)]
+        \setlength{\itemsep}{0pt}
+        \item If $x_0 = 0$ or $x_0 = 2^l$ with $l \Ge 0$, the orbit reaches the fixed point $0$.
+        \item If $x_0 = 2^l (2^m + 1)$ with $l \Ge 0$ and $m \Ge 1$, the orbit enters the cycle of length $m$ that contains $2^m + 1$.
+        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+\label{thm: plus}
+    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $Q_+$.
+    \begin{enumerate}[(i)]
+        \setlength{\itemsep}{0pt}
+        \item If $x_0 = 0$, the orbit stays at the fixed point $0$.
+        \item If $x_0 = 2^l (2^m - 1)$ with $l \Ge 0$ and $m \Ge 1$, the orbit enters the cycle of length $m$ that contains $2^m - 1$, which for $m = 1$ is the fixed point $1$.
+        \item If $x_0 = 5 \cdot 2^l$ with $l \Ge 0$, the orbit enters the cycle $15 \to 120 \to 60 \to 30 \to 15$ through $15 = 2^4 - 1$.
+        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+\label{thm: S}
+    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $S$.
+    \begin{enumerate}[(i)]
+        \setlength{\itemsep}{0pt}
+        \item If $x_0 = 0$, or if the odd part of $x_0$ is of the form $2^m \pm 1$ with $m \Ge 1$ or lies in $\{11, 23, 181\}$, the orbit reaches the fixed point $0$.
+        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
+    \end{enumerate}
+\end{theorem}
 
 \citet{sedaghat2020bounded} studies $Q_-$ as a quadratic analogue of the Collatz-type map that sends an even $n$ to $n/2$ and an odd $n$ to $(3n-1)/2 = n + (n-1)/2$, and calls $Q_-$ the divide-or-choose-2 rule. In $Q_-$ and $Q_+$, the sums $n + (n-1)/2$ and $(3n+1)/2 = n + (n+1)/2$ are replaced by the products $n \cdot (n-1)/2$ and $n \cdot (n+1)/2$. \citet[Section~1]{sedaghat2020bounded} states that the orbits of $Q_+$ are qualitatively similar to those of $Q_-$, and does not study $Q_+$ further. The odd branch of $S$ is the product of the consecutive integers $(n-1)/2$ and $(n+1)/2$, and \citet[Section~1]{sedaghat2020bounded} calls $S$ the symmetric rule. For $Q_-$, Sedaghat conjectures that unbounded orbits exist, and that every orbit containing an odd number $2^m - 1$ with $m \Ge 3$ is unbounded \citep[Conjectures~3 and~4]{sedaghat2020bounded}. For $S$, the existence of unbounded orbits is left open in \citep[Section~4]{sedaghat2020bounded}.
 
@@ -100,7 +143,7 @@ so \eqref{eq: key} asks when a number $2^a \pm 2^b + 1$ is a square. This reduce
 \end{equation}
 (Lemma~\ref{lem: key}). None of them has $\varepsilon = \delta = 1$, and only $3 \cdot (2 \cdot 3 - 1) = 2^4 - 1$ has $\varepsilon = \delta = -1$. We call an odd part $q > 1$ \emph{exceptional} if it is not a terminal number but its orbit is bounded. By the decomposition \eqref{eq: decomposition}, the solutions \eqref{eq: solutions} give the exceptional odd part $5 = 2 \cdot 3 - 1$ of $Q_+$ and the exceptional odd parts $11 = 4 \cdot 3 - 1$, $23 = 8 \cdot 3 - 1$ and $181 = 4 \cdot 45 + 1$ of $S$ (Table~\ref{tab: maps}).
 
-\begin{table}[t]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{cccccc}
 \toprule
@@ -111,44 +154,9 @@ $Q_+$ & $n(n+1)/2$ & $2^m - 1$ & $k (2^j k - 1) = 2^m - 1$ & $5$ & Theorem~\ref{
 $S$ & $(n^2 - 1)/4$ & $2^m \pm 1$ & $k (2^j k + \varepsilon) = 2^m + \delta$ & $11$, $23$, $181$ & Theorem~\ref{thm: S} \\
 \bottomrule
 \end{tabular}
-\caption{The Collatz-type maps of \eqref{eq: maps}: the odd branch, the terminal numbers with $m \Ge 1$, the form of \eqref{eq: key} that arises in Lemma~\ref{lem: reduction}, the odd parts $q > 1$ that are not terminal numbers but have a bounded orbit, and the classification theorem.}
+\caption{The Collatz-type maps of \eqref{eq: maps} and \eqref{eq: map S}: the odd branch, the terminal numbers with $m \Ge 1$, the form of \eqref{eq: key} that arises in Lemma~\ref{lem: reduction}, the odd parts $q > 1$ that are not terminal numbers but have a bounded orbit, and the classification theorem.}
 \label{tab: maps}
 \end{table}
-
-Our main results are the following theorems. They characterize all orbits of the Collatz-type maps $Q_-$, $Q_+$ and $S$ in \eqref{eq: maps}.
-
-\begin{theorem}
-\label{thm: minus}
-    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $Q_-$.
-    \begin{enumerate}[(i)]
-        \setlength{\itemsep}{0pt}
-        \item If $x_0 = 0$ or $x_0 = 2^l$ with $l \Ge 0$, the orbit reaches the fixed point $0$.
-        \item If $x_0 = 2^l (2^m + 1)$ with $l \Ge 0$ and $m \Ge 1$, the orbit enters the cycle of length $m$ that contains $2^m + 1$.
-        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
-    \end{enumerate}
-\end{theorem}
-
-\begin{theorem}
-\label{thm: plus}
-    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $Q_+$.
-    \begin{enumerate}[(i)]
-        \setlength{\itemsep}{0pt}
-        \item If $x_0 = 0$, the orbit stays at the fixed point $0$.
-        \item If $x_0 = 2^l (2^m - 1)$ with $l \Ge 0$ and $m \Ge 1$, the orbit enters the cycle of length $m$ that contains $2^m - 1$, which for $m = 1$ is the fixed point $1$.
-        \item If $x_0 = 5 \cdot 2^l$ with $l \Ge 0$, the orbit enters the cycle $15 \to 120 \to 60 \to 30 \to 15$ through $15 = 2^4 - 1$.
-        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
-    \end{enumerate}
-\end{theorem}
-
-\begin{theorem}
-\label{thm: S}
-    Let $x_0 \in \mathbb N_0$, and let $(x_i)_{i \Ge 0}$ be its orbit under $S$.
-    \begin{enumerate}[(i)]
-        \setlength{\itemsep}{0pt}
-        \item If $x_0 = 0$, or if the odd part of $x_0$ is of the form $2^m \pm 1$ with $m \Ge 1$ or lies in $\{11, 23, 181\}$, the orbit reaches the fixed point $0$.
-        \item For every other $x_0$, the orbit satisfies $x_i \to \infty$ as $i \to \infty$.
-    \end{enumerate}
-\end{theorem}
 
 Theorem~\ref{thm: minus} is the classification of \citet[Theorem~3]{sedaghat2020dual}, with $l \Ge 0$ and with the initial values $0$ and $2^l$. We provide a new and complete proof: we transform $k(2^j k + 1) = 2^m + 1$ into the equation $2^a + 2^b + 1 = z^2$, whose solutions were determined by \citet{szalay2002equations}, and conclude that $k(2^j k + 1) = 2^m + 1$ has no solution with odd $k \Ge 3$ (Lemma~\ref{lem: key}~(i)). To our knowledge, Theorems~\ref{thm: plus} and~\ref{thm: S} are new. Theorem~\ref{thm: S} shows that $S$ has unbounded orbits, for instance the orbit of $13$. This answers the question left open by \citet{sedaghat2020bounded}. For each map, only $O((\log X)^2)$ initial values in $\{0, 1, \dots, X\}$ have a bounded orbit (Corollary~\ref{cor: bounded}).
 
@@ -266,7 +274,7 @@ We solve \eqref{eq: key} with the following result of \citet{szalay2002equations
     \end{enumerate}
 \end{lemma}
 
-Apart from textbook results, Lemma~\ref{lem: szalay} is the only external result used in our proofs.
+Apart from textbook results, Lemma~\ref{lem: szalay} is the only external result used in our proofs. By the identity \eqref{eq: square}, every solution of \eqref{eq: key} gives a square of the form $2^a \pm 2^b + 1$, so Lemma~\ref{lem: szalay} determines all solutions of \eqref{eq: key}.
 
 \begin{lemma}
 \label{lem: key}
@@ -285,7 +293,11 @@ Apart from textbook results, Lemma~\ref{lem: szalay} is the only external result
     \end{equation*}
     solves the equation of Lemma~\ref{lem: szalay}~(i) if $\delta = 1$, and that of Lemma~\ref{lem: szalay}~(ii) if $\delta = -1$. Since $m \Ge 1$, the exponent $a$ exceeds $b$. Since $j \Ge 1$, we have $z \equiv \varepsilon \pmod 4$, so $z$ determines $\varepsilon$. Then $j = b - 2$, $k = (z - \varepsilon)/2^{j+1}$ and $m = a - j - 2$.
 
-    If $(a, b, z)$ belongs to the family $(2u, u + 1, 2^u + \delta)$ of Lemma~\ref{lem: szalay}, then $u = b - 1 = j + 1$, and $2^{j+1} k + \varepsilon = 2^{j+1} + \delta$ gives $2^{j+1} (k - 1) = \delta - \varepsilon$. This is impossible, since $2^{j+1} (k - 1) \Ge 8$. For $\delta = 1$, the solution $(5, 4, 7)$ gives $j = 2$, $\varepsilon = -1$ and $k = 1$, which is excluded. The solution $(9, 4, 23)$ gives $(j, k, \varepsilon, m) = (2, 3, -1, 5)$. For $\delta = -1$, the solution $(5, 3, 5)$ gives $j = 1$, $\varepsilon = 1$ and $k = 1$, which is excluded. The solutions $(7, 3, 11)$ and $(15, 3, 181)$ give $(j, k, \varepsilon, m) = (1, 3, -1, 4)$ and $(1, 45, 1, 12)$. These are the identities \eqref{eq: solutions}. None of them has $\varepsilon = \delta = 1$, and only $(j, k, \varepsilon, m, \delta) = (1, 3, -1, 4, -1)$ has $\varepsilon = \delta = -1$. This proves (i) and (ii).
+    For $\delta = 1$, Lemma~\ref{lem: szalay}~(i) gives $(a, b, z) = (2u, u + 1, 2^u + 1)$ with $u \Ge 1$, $(a, b, z) = (5, 4, 7)$ or $(a, b, z) = (9, 4, 23)$. In the family, $u = b - 1 = j + 1$, and $2^{j+1} k + \varepsilon = 2^{j+1} + 1$ gives $2^{j+1} (k - 1) = 1 - \varepsilon$. This is impossible, since $2^{j+1} (k - 1) \Ge 8$. The solution $(5, 4, 7)$ gives $j = 2$, $\varepsilon = -1$ and $k = 1$, which is excluded. The solution $(9, 4, 23)$ gives $(j, k, \varepsilon, m) = (2, 3, -1, 5)$.
+
+    For $\delta = -1$, Lemma~\ref{lem: szalay}~(ii) gives $(a, b, z) = (2u, u + 1, 2^u - 1)$ with $u \Ge 2$, $(a, b, z) = (5, 3, 5)$, $(a, b, z) = (7, 3, 11)$ or $(a, b, z) = (15, 3, 181)$. In the family, $u = b - 1 = j + 1$, and $2^{j+1} k + \varepsilon = 2^{j+1} - 1$ gives $2^{j+1} (k - 1) = -1 - \varepsilon$. This is impossible, since $2^{j+1} (k - 1) \Ge 8$. The solution $(5, 3, 5)$ gives $j = 1$, $\varepsilon = 1$ and $k = 1$, which is excluded. The solutions $(7, 3, 11)$ and $(15, 3, 181)$ give $(j, k, \varepsilon, m) = (1, 3, -1, 4)$ and $(1, 45, 1, 12)$.
+
+    These are the identities \eqref{eq: solutions}. None of them has $\varepsilon = \delta = 1$, and only $(j, k, \varepsilon, m, \delta) = (1, 3, -1, 4, -1)$ has $\varepsilon = \delta = -1$. This proves (i) and (ii).
 \end{proof}
 
 Lemma~\ref{lem: key}~(i) is the statement of \citep[Lemma~2]{sedaghat2020dual}. The next remark discusses the descent by which it is proved there.
@@ -434,6 +446,10 @@ The proof of Theorem~\ref{thm: plus} uses Lemma~\ref{lem: key} only through (ii)
 We leave the following questions open.
 
 Under $Q_-$, does some initial value not covered by Theorem~\ref{thm: minus}~(i) and~(ii) have an orbit in which every odd term divides some number $2^m + 1$? By Theorem~\ref{thm: criterion}~(i), an elementary proof that no such initial value exists would give an elementary proof of Theorem~\ref{thm: minus}~(iii). Is there an elementary proof that \eqref{eq: key} has no solution with $\varepsilon = \delta = 1$? Such a proof would make Theorem~\ref{thm: minus} elementary.
+
+\section*{Data availability}
+
+The results of this paper and Lemma~\ref{lem: szalay} are verified in Lean~4 with the Mathlib library. The verification takes the results of Beukers used by \citet{szalay2002equations} as axioms. The Lean code is available at \url{https://github.com/xuda-ye-math/Collatz}. The Lean code is written with the assistance of Claude (Opus 5.5).
 
 \bibliographystyle{plainnat}
 \bibliography{references}

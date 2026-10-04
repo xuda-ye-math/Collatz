@@ -1,6 +1,7 @@
 .*
 !.gitignore
 NNTDM/
+Chinese.md
 *.aux
 *.bbl
 *.blg
